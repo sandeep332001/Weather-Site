@@ -27,16 +27,16 @@ weatherForm.addEventListener("submit", (event) => {
   const location = search.value;
   messageOne.textContent = "Loading...";
 
-  fetch(`http://localhost:3000/weather?address=${location}`).then(
-    (response) => {
-      response.json().then((data) => {
-        if (data.error) {
-          messageOne.textContent = data.error;
-        } else {
-          messageOne.textContent = `Country is ${data.body.body.location.country} and time is ${data.body.body.location.localtime}`;
-          //   console.log(data.body);
-        }
-      });
-    }
-  );
+  //http://localhost:3000/weather?address=parsipur
+
+  fetch(`/weather?address=${location}`).then((response) => {
+    response.json().then((data) => {
+      if (data.error) {
+        messageOne.textContent = data.error;
+      } else {
+        messageOne.textContent = `Country is ${data.body.body.location.country} and time is ${data.body.body.location.localtime}`;
+        //   console.log(data.body);
+      }
+    });
+  });
 });
