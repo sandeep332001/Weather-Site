@@ -1,2 +1,2 @@
 # Weather-site
-  -Learning Something New
+  Learning Something New
